@@ -1,0 +1,33 @@
+.repo {
+    background-color: aliceblue;
+    color: #333;
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    padding: 1em 1.6em;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+.name {
+    font-size: 1em;
+    line-break: anywhere;
+}
+
+.stars {
+    font-size: 0.8em;
+    white-space: nowrap;
+}
+
+.description {
+    font-size: 0.8em;
+}
+
+.link {
+    margin-top: 1em;
+    font-size: 0.8em;
+    color: darkslategrey;
+}
