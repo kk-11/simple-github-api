@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { type Repo } from "../types";
+import { type Repo } from "@types";
 
 const useRepos = (user: string) => {
     const [data, setData] = useState<Repo[]>([]);

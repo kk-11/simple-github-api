@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { type User } from "../types";
+import { type User } from "@types";
 
 const useUsers = (query: string) => {
     const [data, setData] = useState<User[]>([]);
@@ -11,7 +11,13 @@ const useUsers = (query: string) => {
         const fetchData = async () => {
             await fetch(`/api/users?qs=${query}`)
                 .then((res) => res.json())
-                .then((res) => setData(res))
+                .then((res) => {
+                    if (res.error) {
+                        setError(res?.message || "Something went wrong");
+                    } else {
+                        setData(res);
+                    }
+                })
                 .catch((e) => setError(e?.message || "Something went wrong"))
                 .finally(() => setLoading(false));
         };

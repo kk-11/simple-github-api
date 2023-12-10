@@ -16,4 +16,5 @@ Potential improvements
 - Style solution could be nicer to work with.
 - make it pop 💥
 - add unit testing.
+- api error handling.
 

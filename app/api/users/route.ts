@@ -13,10 +13,14 @@ const fetchData = async (qs: string) => {
         headers,
     })
         .then((res) => res.json())
-        .then((res) => res?.items?.splice(0, 5) || res)
-        .catch((e) => {
-            throw new Error(`Something went wrong: ${e}`);
-        });
+        .then((res) => {
+            if (res?.message?.includes("API rate limit")) {
+                return { message: "API Rate limit exceeded", error: true };
+            }
+            return res?.items?.splice(0, 5) || res;
+        })
+        .catch((e) => console.error(e));
+    
 
     return data;
 };
