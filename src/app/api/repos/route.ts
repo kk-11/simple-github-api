@@ -3,9 +3,16 @@ import type { NextRequest } from "next/server";
 
 const baseUrl = "https://api.github.com/users/";
 
+let headers = {};
+if (process.env.GITHUB_TOKEN) {
+    headers = {
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+    };
+}
+
 const fetchData = async (user: string) => {
     const data = await fetch(`${baseUrl}${user}/repos`, {
-        headers: { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` },
+        headers,
     })
         .then((res) => res.json())
         .catch((e) => {

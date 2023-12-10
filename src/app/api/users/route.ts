@@ -2,9 +2,15 @@ const baseUrl = "https://api.github.com/search/users?q=";
 import type { NextRequest } from "next/server";
 // import { users } from "./../../mocked";
 
+let headers = {};
+if (process.env.GITHUB_TOKEN) {
+    headers = {
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+    };
+}
 const fetchData = async (qs: string) => {
     const data = await fetch(`${baseUrl}${qs}`, {
-        headers: { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` },
+        headers,
     })
         .then((res) => res.json())
         .then((res) => res?.items?.splice(0, 5) || res)
