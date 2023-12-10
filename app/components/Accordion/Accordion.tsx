@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import s from "./Accordion.module.css";
 import ReposList from "../ReposList";
-import { User } from "../../types";
+import { User } from "@types";
+
+import s from "./Accordion.module.css";
 
 const Accordion = ({ login, id }: User) => {
     const [open, setOpen] = useState(false);

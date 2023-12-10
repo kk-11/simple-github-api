@@ -1,9 +1,6 @@
-import Accordion from "../Accordion";
-import { useUsers } from "../../hooks";
-import { type User } from "../../types";
-import s from "./UsersList.module.css";
-import Loader from "../Loader";
-import Error from "../Error";
+import { Loader, Accordion, Error } from "@components";
+import { useUsers } from "@hooks";
+import { type User } from "@types";
 
 const UsersList = ({ query }: { query: string }) => {
     const { data, loading, error } = useUsers(query);

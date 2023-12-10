@@ -1,9 +1,9 @@
-import { useRepos } from "../../hooks";
-import s from "./ReposList.module.css";
-import { type Repo } from "../../types";
 import RepoCard from "./components/RepoCard/RepoCard";
-import Loader from "../Loader";
-import Error from "../Error";
+import { Loader, Error } from "@components";
+import { useRepos } from "@hooks";
+import { type Repo } from "@types";
+
+import s from "./ReposList.module.css";
 
 function ReposList({ username }: { username: string }) {
     const { data, loading, error } = useRepos(username);

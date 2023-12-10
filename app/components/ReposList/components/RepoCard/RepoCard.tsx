@@ -1,4 +1,4 @@
-import { Repo } from "../../../../types";
+import { Repo } from "@types";
 import s from "./RepoCard.module.css";
 
 export default function RepoCard({ data }: { data: Repo }) {
