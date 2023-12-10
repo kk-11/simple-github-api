@@ -2,6 +2,7 @@
 import { useState } from "react";
 import s from "./page.module.css";
 import UsersList from "./components/UsersList";
+import Branding from "./components/Branding";
 
 export default function Home() {
     const [query, setQuery] = useState("");
@@ -21,6 +22,7 @@ export default function Home() {
             <section className={s.section}>
                 {query && <UsersList query={query} />}
             </section>
+            <Branding />
         </main>
     );
 }
