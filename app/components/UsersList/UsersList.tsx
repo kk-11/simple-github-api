@@ -1,6 +1,6 @@
 import Accordion from "../Accordion";
-import { useUsers } from "@/app/hooks";
-import { type User } from "@/app/types";
+import { useUsers } from "../../hooks";
+import { type User } from "../../types";
 import s from "./UsersList.module.css";
 import Loader from "../Loader";
 import Error from "../Error";

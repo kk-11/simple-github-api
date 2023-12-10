@@ -1,6 +1,6 @@
-import { useRepos } from "@/app/hooks";
+import { useRepos } from "../../hooks";
 import s from "./ReposList.module.css";
-import { type Repo } from "@/app/types";
+import { type Repo } from "../../types";
 import RepoCard from "./components/RepoCard/RepoCard";
 import Loader from "../Loader";
 import Error from "../Error";

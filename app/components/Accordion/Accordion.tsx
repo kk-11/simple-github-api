@@ -3,7 +3,7 @@
 import { useState } from "react";
 import s from "./Accordion.module.css";
 import ReposList from "../ReposList";
-import { User } from "@/app/types";
+import { User } from "../../types";
 
 const Accordion = ({ login, id }: User) => {
     const [open, setOpen] = useState(false);
