@@ -1,4 +1,5 @@
 "use client";
+import Head from "next/head";
 import { useState } from "react";
 import s from "./page.module.css";
 import UsersList from "./components/UsersList";
@@ -13,6 +14,12 @@ export default function Home() {
 
     return (
         <main className={s.main}>
+            <Head>
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1, maximum-scale=1"
+                />
+            </Head>
             <input
                 className={s.input}
                 onChange={handleChange}
